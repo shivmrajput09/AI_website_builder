@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.61.11",
     "@clerk/clerk-sdk-node": "^4.13.23",
+    "@codesandbox/sandpack-react": "^2.20.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },

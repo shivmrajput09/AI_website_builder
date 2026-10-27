@@ -4,8 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import { ClerkProvider } from '@clerk/clerk-react'
 
-// Vite mein .env variables import.meta.env se access hote hain
-const PUBLISHABLE_KEY = import.meta.env.pk_test_bW9kZXJuLXNuYWtlLTQyODQuY2xlcmsuYWNjb3VudHMuZGV2JA
+// Yahan variable ka naam aayega, actual key nahi
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key")
