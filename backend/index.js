@@ -1,28 +1,13 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
+import express from 'express';
+import { ClerkExpressRequireAuth } from '@clerk/clerk-sdk-node';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const app = express();
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Database Connection
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('✅ MongoDB Connected Successfully'))
-  .catch((err) => console.error('❌ MongoDB Connection Error:', err));
-
-// Basic Route
-app.get('/', (req, res) => {
-  res.send('AI Website Builder API is running...');
+// Protected Route Example
+app.get('/api/protected', ClerkExpressRequireAuth(), (req, res) => {
+  res.json({ message: "Success!", userId: req.auth.userId });
 });
 
-// Start Server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
-});
-
-const a = 10;
+app.listen(5000, () => console.log('Server running on port 5000'));

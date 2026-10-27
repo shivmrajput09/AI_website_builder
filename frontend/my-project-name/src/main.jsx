@@ -5,7 +5,7 @@ import './index.css'
 import { ClerkProvider } from '@clerk/clerk-react'
 
 // Vite mein .env variables import.meta.env se access hote hain
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+const PUBLISHABLE_KEY = import.meta.env.pk_test_bW9kZXJuLXNuYWtlLTQyODQuY2xlcmsuYWNjb3VudHMuZGV2JA
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key")
