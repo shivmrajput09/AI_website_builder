@@ -1,0 +1,67 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fonts: Poppins = headings (geometric, bold), Inter = body (readable).
+   NOTE: @import url() hamesha sabse upar rahega. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap");
+@import "tailwindcss";
+ 
+/* Design tokens: poori app ke colors/fonts yahin se control honge.
+   Tailwind v4 inhe automatically classes bana deta hai:
+   bg-canvas, bg-paper, bg-forest-950, bg-forest-800, bg-lime, font-display ... */
+@theme {
+  --color-canvas: #e8e9e3;      /* page background (warm grey) */
+  --color-paper: #fafafa;       /* white card / main surface */
+  --color-forest-950: #072e29;  /* deepest green: dark cards, footer */
+  --color-forest-800: #13573f;  /* brand green: text, buttons, mid cards */
+  --color-lime: #d3fa9b;        /* accent: CTA, active nav, highlights */
+  --color-mist: #a9c7bb;        /* muted text on dark green */
+ 
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  background: var(--color-canvas);
+  color: var(--color-forest-800);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+ 
+/* Headings: tight tracking + tight leading = "premium" look */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+ 
+/* Keyboard users ke liye visible focus ring */
+:focus-visible {
+  outline: 3px solid var(--color-lime);
+  outline-offset: 3px;
+}
+ 
+/* Jinhone OS mein "reduce motion" on kiya hai unke liye animation band */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+ 
