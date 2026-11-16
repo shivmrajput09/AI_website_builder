@@ -23,6 +23,7 @@ app.use(cookieParser());   // cookies ko req.cookies mein laane ke liye
 // Routes
 app.use("/api/auth", authRouter); // login, logout
 app.use("/api/user", userRouter); // current user
+app.use("/api/website", websiteRouter); // 👈 Website routes yahan mount ho gaye!
 
 // Test route: server chal raha hai ya nahi
 app.get("/", (req, res) => res.send("Server is running"));
